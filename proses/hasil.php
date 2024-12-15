@@ -6,20 +6,142 @@ include "../koneksi.php";
 ?>
 
 <head>
+
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 0.5rem 1rem;
+            background-color: #0056b3;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #003d80;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container a {
+            display: inline-block;
+            margin-bottom: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background-color 0.3s;
+        }
+
+        .container a:hover {
+            background-color: #0056b3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        table th,
+        table td {
+            text-align: left;
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #007bff;
+            color: white;
+        }
+
+        table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        table tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .actions a {
+            margin-right: 0.5rem;
+            padding: 0.3rem 0.6rem;
+            border-radius: 5px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .actions a.edit {
+            background-color: #ffc107;
+            color: white;
+        }
+
+        .actions a.edit:hover {
+            background-color: #e0a800;
+        }
+
+        .actions a.delete {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .actions a.delete:hover {
+            background-color: #bd2130;
+        }
+    </style>
+
 </head>
 
 <body>
 
     <!-- start Proses -->
+     <br>
     <div hidden>
         <!-- <h1>mencari nilai alfa</h1> -->
+         <b>
         <?php
         //mencari nilai alfa
         $alfa = 0.01;
         $beta = 0.99;
         $gamma = 0.99;
         while ($alfa < 1) {
-        ?>
+            ?>
+        </b>
             <table border="1" hidden>
                 <thead>
                     <tr>
@@ -896,7 +1018,7 @@ include "../koneksi.php";
                 <th>ABS(E/P)</th>
             </tr>
         </thead>
-        <tfoot>
+        <!-- <tfoot>
             <tr>
                 <th rowspan="2">NO</th>
                 <th rowspan="2">PENGUNJUNG</th>
@@ -910,7 +1032,7 @@ include "../koneksi.php";
                 <th>E</th>
                 <th>ABS(E/P)</th>
             </tr>
-        </tfoot>
+        </tfoot> -->
         <tbody>
             <?php
             $no = 1;
@@ -1096,6 +1218,8 @@ include "../koneksi.php";
         </tbody>
     </table>
 
+
+    <br>
     <h3>MAPE : </h3>
     <p>
         = <?php echo number_format($smape_a = (100 / count($jumlah_ar) * array_sum($jumlah_ar)), 2, ",", ".") ?>%
@@ -1113,14 +1237,14 @@ include "../koneksi.php";
 
             </tr>
         </thead>
-        <tfoot>
+        <!-- <tfoot>
             <tr>
                 <th>NO</th>
                 <th>Periode</th>
                 <th>Prediksi</th>
 
             </tr>
-        </tfoot>
+        </tfoot> -->
         <tbody>
             <?php
             $periode = $no++;

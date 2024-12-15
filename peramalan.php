@@ -17,8 +17,8 @@ include "koneksi.php";
 <body>
     <nav>
         <ul>
-            <li><a href="index.php">Olah Data</a></li>
-            <li><a href="peramalan.php">Forecasting</a></li>
+            <li><a href="index.php">Back Olah Data</a></li>
+            <!-- <li><a href="peramalan.php">Forecasting</a></li> -->
         </ul>
     </nav>
 
